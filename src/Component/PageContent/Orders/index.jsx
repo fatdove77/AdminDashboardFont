@@ -1,11 +1,11 @@
 import React from 'react'
 import { Typography } from 'antd'
-function index() {
+function Orders() {
   return (
     <div>
-      <Typography.Text>Inventory</Typography.Text>
+      <Typography.Title Title = {4}>Orders</Typography.Title>
     </div>
   )
 }
 
-export default index
+export default Orders

@@ -5,8 +5,7 @@ import { Outlet } from 'react-router-dom'
 function PageContent() {
   return (
     <div className="pageContent">
-      pageContent
-      <Outlet></Outlet>
+      <Outlet ></Outlet>
     </div>
   )
 }

@@ -9,12 +9,13 @@ import AppFooter from '@/Component/AppFooter'
 function Home() {
   return (
     <div className="home">
-      <AppHeader></AppHeader>
-      <Space className="flex flex-1 items-start justify-start" >
         <SideMenu ></SideMenu>
-        <PageContent/>
-      </Space>
-      <AppFooter></AppFooter>
+        <div className = "content">
+          <AppHeader></AppHeader>
+          <PageContent />
+        </div>
+       
+      {/* <AppFooter></AppFooter> */}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { Typography } from 'antd'
 function Customer() {
   return (
     <div>
-      <Typography.Text>customer</Typography.Text>
+      <Typography.Title Title = {4}>Customer</Typography.Title>
     </div>
   )
 }

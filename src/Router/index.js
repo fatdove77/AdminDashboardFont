@@ -1,11 +1,24 @@
 import React, { lazy, Suspense } from 'react'
 import { useRoutes } from 'react-router-dom';
 const Home = lazy(
-  async () => await import('../pages/Home')
+  async () => await import('@/pages/Home/Home.jsx')
 );
 const Login = lazy(
   async () => await import('../pages/Login')
 );
+
+const User = lazy(
+  async () => await import('../pages/User')
+)
+
+const New = lazy(
+  async () => await import('../pages/New')
+)
+
+const Single = lazy(
+  async () => await import('../pages/Single')
+)
+
 
 const DashBoard = lazy(
   async () => await import('@/Component/PageContent/DashBoard')
@@ -22,6 +35,8 @@ const Inventory = lazy(
 const Customer = lazy(
   async () => await import('@/Component/PageContent/Customer')
 )
+
+
 
 
 
@@ -53,6 +68,34 @@ function Index() {
     {
       path: '/login',
       element: <Login></Login>
+    },
+    {
+      path: '/users',
+      element: <User></User>,
+      children:[
+        {
+          path:'new',
+          element:<New></New>
+        },
+        {
+          path:':userId',
+          element:<Single></Single>
+        }
+      ]
+    },
+    {
+      path: '/products',
+      element: <User></User>,
+      children:[
+        {
+          path:'new',
+          element:<New></New>
+        },
+        {
+          path:':productId',
+          element:<Single></Single>
+        }
+      ]
     },
   ])
   return (
