@@ -1,0 +1,49 @@
+.navbar{
+  height: 50px;
+  border-bottom: .5px solid rgb(231, 226,228 );
+  font-size: 14px;
+  color:#555 ;
+  display: flex;
+  align-items: center;
+  .wrapper{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+    .search{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: .5px solid lightgrey;
+      padding: 3px;
+      input{
+        border: none;
+        outline:none;
+        background-color: transparent;
+      }
+    }
+    .items{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      .item{
+        display:flex;
+        align-items:center;
+        gap: 5px;
+        .badge{
+        }
+        .icon{
+          width: 15px;
+          display: flex;
+        }
+        img{
+          width: 30px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+ 
+}

@@ -16,11 +16,12 @@ import { Web3Provider } from "@ethersproject/providers";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <Web3ReactProvider getLibrary={(provider) => new Web3Provider(provider)}>
+<Web3ReactProvider getLibrary={(provider) => new Web3Provider(provider)}>
       <Provider store={store} >
         <App />
       </Provider>
     </Web3ReactProvider>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function

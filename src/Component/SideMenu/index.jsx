@@ -30,6 +30,7 @@ function SideMenu() {
       <div>
         <div className="title" >Fatdove</div>
         <Menu
+        style = {{height:'80vh'}}
         onClick = {(item)=>{
           //key
           navigate(item.key)
@@ -41,13 +42,14 @@ function SideMenu() {
           inlineCollapsed={false}
           items={items}
         />
-      </div>
-       
-      <div className="flex justify-center gap-1 mb-4 ">
+        <div className="flex justify-center gap-1 mb-4  border-r border-solid border-gray-200  ">
         <span className="w-8 h-8 bg-black border border-solid border-gray-900 rounded-lg"></span>
         <span className="w-8 h-8 bg-white border border-solid border-gray-900 rounded-lg "></span>
         <span className="w-8 h-8 bg-pink-300 border border-solid border-gray-900 rounded-lg "></span>
+        </div>
       </div>
+       
+      
     </div>
   )
 }

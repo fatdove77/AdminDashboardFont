@@ -19,6 +19,9 @@ const Single = lazy(
   async () => await import('../pages/Single')
 )
 
+const List = lazy(
+  async () => await import('@/Component/PageContent/List')
+)
 
 const DashBoard = lazy(
   async () => await import('@/Component/PageContent/DashBoard')
@@ -62,6 +65,10 @@ function Index() {
           path:'customer',
           element:<Customer></Customer>
         },
+        {
+          path:'user',
+          element:<List></List>
+        },
         
       ]
     },
@@ -69,20 +76,20 @@ function Index() {
       path: '/login',
       element: <Login></Login>
     },
-    {
-      path: '/users',
-      element: <User></User>,
-      children:[
-        {
-          path:'new',
-          element:<New></New>
-        },
-        {
-          path:':userId',
-          element:<Single></Single>
-        }
-      ]
-    },
+    // {
+    //   path: '/users',
+    //   element: <User></User>,
+    //   children:[
+    //     {
+    //       path:'new',
+    //       element:<New></New>
+    //     },
+    //     {
+    //       path:':userId',
+    //       element:<Single></Single>
+    //     }
+    //   ]
+    // },
     {
       path: '/products',
       element: <User></User>,
