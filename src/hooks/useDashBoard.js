@@ -72,6 +72,27 @@ export function useDashBoard() {
       address: 'Sydney No. 1 Lake Park',
       tags: ['cool', 'teacher'],
     },
+    {
+      key: '4',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '5',
+      name: 'zzz',
+      age: 18,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '6',
+      name: 'zzz',
+      age: 18,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
   ]);
   const [loading,setLoading] = useState(false);
   // const getData = async()=>{

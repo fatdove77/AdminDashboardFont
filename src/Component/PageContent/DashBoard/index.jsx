@@ -13,7 +13,7 @@ function DashBoard() {
 
  
   return (
-    <div>
+    <div className='dashboard'>
       <Cards></Cards>
       <div className='cf_container'>
         <Features></Features>

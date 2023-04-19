@@ -14,6 +14,7 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem('DashBoard', '/', <PieChartOutlined />),
+  getItem('User', 'User', <DesktopOutlined />),
   getItem('Inventory', 'Inventory', <DesktopOutlined />),
   getItem('Orders', 'Orders', <ContainerOutlined />),
   getItem('Customer', 'Customer', <MailOutlined />),
