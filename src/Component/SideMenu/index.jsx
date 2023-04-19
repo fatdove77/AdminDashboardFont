@@ -2,7 +2,8 @@ import React from 'react'
 import './style.scss'
 import { Menu } from 'antd'
 import {PieChartOutlined,DesktopOutlined,ContainerOutlined,MailOutlined,AppstoreOutlined} from '@ant-design/icons'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
+import { useState } from 'react';
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -13,7 +14,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('DashBoard', '/', <PieChartOutlined />),
+  getItem('DashBoard', 'Dashboard', <PieChartOutlined />),
   getItem('User', 'User', <DesktopOutlined />),
   getItem('Inventory', 'Inventory', <DesktopOutlined />),
   getItem('Orders', 'Orders', <ContainerOutlined />),
@@ -26,6 +27,7 @@ const items = [
 ];
 function SideMenu() {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div className="SideMenu">
       <div>
@@ -36,8 +38,8 @@ function SideMenu() {
           //key
           navigate(item.key)
         }}
-          defaultSelectedKeys={['/']}  //默认选中的key
-          defaultOpenKeys={['']}   //默认打开的key
+          defaultSelectedKeys={[location.pathname.split("/")[1]]}  //默认选中的key
+          defaultOpenKeys={['sub2']}   //默认打开的key
           mode="inline"
           theme="light"
           inlineCollapsed={false}

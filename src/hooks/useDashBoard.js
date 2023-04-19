@@ -1,6 +1,7 @@
 import React, { useEffect, useState ,useMemo} from 'react'
 import { getOrders } from '../request/api';
-import {Tag,Space} from 'antd'
+import {Tag,Space,Button} from 'antd'
+import { Link, useNavigate } from 'react-router-dom';
 export function useDashBoard() {
   const columns = [
     {
@@ -159,5 +160,94 @@ export function useChart(){
   ];
   return {
     data
+  }
+}
+
+
+
+export function useUserTable (){
+  const navigate = useNavigate();
+  const [columns,setColumns] = useState([
+    {
+    title: 'Name',
+    dataIndex: 'name',
+    render: (text) => <a>{text}</a>,
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.age - b.age,  //排序
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+  },
+  {
+    title:'Action',
+    dataIndex: 'action',
+    render: (_, record) => (
+      <div>
+        {/* <Link to={`${record.id}`}> */}
+          <Button onClick = {()=>{navigate(`/user/${record.id}`)}}>detail</Button>
+        {/* </Link> */}
+      </div>
+        
+    ),
+  }
+  ])
+  const [data,setData] = useState([
+    {
+    id: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    id: '2',
+    name: 'Jim Green',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    id: '3',
+    name: 'Joe Black',
+    age: 32,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    id: '4',
+    name: 'ls',
+    age: 99,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    id: '5',
+    name: 'op',
+    age: 99,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    id: '6',
+    name: 'arb',
+    age: 99,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    id: '7',
+    name: 'fat User',
+    age: 99,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  ])
+  const [pageSize,setPage] =useState(5);
+  const [selectedRowKeys, setSelectedRowKeys] = useState([])  //选择行的key的数组
+   const checkChange = (selectedRowKeys, selectedRows,record) => {
+    console.log(selectedRowKeys,selectedRows,record);
+    setSelectedRowKeys(selectedRowKeys); //选中的key
+  }
+
+  return {
+    data,columns,pageSize,selectedRowKeys,checkChange
   }
 }

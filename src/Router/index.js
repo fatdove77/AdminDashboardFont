@@ -16,11 +16,11 @@ const New = lazy(
 )
 
 const Single = lazy(
-  async () => await import('../pages/Single')
+  async () => await import('@/Component/PageContent/User/Single.jsx')
 )
 
 const List = lazy(
-  async () => await import('@/Component/PageContent/List')
+  async () => await import('@/Component/PageContent/User')
 )
 
 const DashBoard = lazy(
@@ -54,6 +54,10 @@ function Index() {
           element:<DashBoard></DashBoard>
         },
         {
+          path:'/dashboard',
+          element:<DashBoard></DashBoard>
+        },
+        {
           path:'orders',
           element:<Orders></Orders>
         },
@@ -69,40 +73,16 @@ function Index() {
           path:'user',
           element:<List></List>
         },
+        {
+          path:'user/:id',
+          element:<Single></Single>
+        },
         
       ]
     },
     {
       path: '/login',
       element: <Login></Login>
-    },
-    // {
-    //   path: '/users',
-    //   element: <User></User>,
-    //   children:[
-    //     {
-    //       path:'new',
-    //       element:<New></New>
-    //     },
-    //     {
-    //       path:':userId',
-    //       element:<Single></Single>
-    //     }
-    //   ]
-    // },
-    {
-      path: '/products',
-      element: <User></User>,
-      children:[
-        {
-          path:'new',
-          element:<New></New>
-        },
-        {
-          path:':productId',
-          element:<Single></Single>
-        }
-      ]
     },
   ])
   return (
