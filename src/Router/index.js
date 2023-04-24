@@ -12,7 +12,7 @@ const User = lazy(
 )
 
 const New = lazy(
-  async () => await import('../pages/New')
+  async () => await import('@/Component/PageContent/User/New.jsx')
 )
 
 const Single = lazy(
@@ -76,6 +76,9 @@ function Index() {
         {
           path:'user/:id',
           element:<Single></Single>
+        },{
+          path:'user/new',
+          element:<New></New>
         },
         
       ]

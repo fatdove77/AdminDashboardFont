@@ -15,7 +15,7 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem('DashBoard', '', <PieChartOutlined />),
-  getItem('User', 'User', <DesktopOutlined />),
+  getItem('User', 'user', <DesktopOutlined />),
   getItem('Inventory', 'Inventory', <DesktopOutlined />),
   getItem('Orders', 'Orders', <ContainerOutlined />),
   getItem('Customer', 'Customer', <MailOutlined />),
@@ -28,13 +28,15 @@ const items = [
 function SideMenu() {
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location.pathname.split("/")[1]);
   return (
     <div className="SideMenu">
       <div>
         <div className="title" >Fatdove</div>
         <Menu
         style = {{height:'80vh'}}
-        key = {location.pathname.split("/")[1]}
+        key = {location.pathname.split("/")[1]} //key和路由相等
+        // selectedKeys = {location.pathname.split("/")[1]}
         onClick = {(item)=>{
           //key
           navigate(item.key)
