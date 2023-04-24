@@ -14,7 +14,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem('DashBoard', 'Dashboard', <PieChartOutlined />),
+  getItem('DashBoard', '', <PieChartOutlined />),
   getItem('User', 'User', <DesktopOutlined />),
   getItem('Inventory', 'Inventory', <DesktopOutlined />),
   getItem('Orders', 'Orders', <ContainerOutlined />),
@@ -34,6 +34,7 @@ function SideMenu() {
         <div className="title" >Fatdove</div>
         <Menu
         style = {{height:'80vh'}}
+        key = {location.pathname.split("/")[1]}
         onClick = {(item)=>{
           //key
           navigate(item.key)
